@@ -1,264 +1,265 @@
-
-<h2 class="sr-only">Ironman Vietnam blockchain sandbox partner ecosystem – click any card to expand role and personnel details</h2>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ironman-blockchain-sandbox</title>
 <style>
-#emap*{box-sizing:border-box}
-.layer{border-radius:10px;padding:8px 10px 10px}
-.lbl{font-size:9px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px}
-.cards{display:flex;gap:5px;align-items:stretch}
-.card{display:flex;flex-direction:column;padding:8px 7px;border-radius:8px;cursor:pointer;border:.5px solid rgba(0,0,0,.1);flex:1;min-width:0;transition:all .12s;background:rgba(255,255,255,.6)}
-.card:hover{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.88)}
-.card.active{border-color:rgba(56,138,221,.6);box-shadow:0 0 0 2px rgba(56,138,221,.18);background:rgba(255,255,255,.95)}
-.card.tbd{opacity:.38;pointer-events:none}
-.logo{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;margin-bottom:4px;flex-shrink:0}
+#em *{box-sizing:border-box}
+.ly{border-radius:10px;padding:8px 10px 10px}
+.lb{font-size:9px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px}
+.cs{display:flex;gap:5px;align-items:stretch}
+.c{display:flex;flex-direction:column;padding:8px 7px;border-radius:8px;cursor:pointer;border:.5px solid rgba(0,0,0,.1);flex:1;min-width:0;transition:all .12s;background:rgba(255,255,255,.6)}
+.c:hover{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.88)}
+.c.act{border-color:rgba(56,138,221,.6);box-shadow:0 0 0 2px rgba(56,138,221,.18);background:rgba(255,255,255,.95)}
+.c.tbd{opacity:.38;pointer-events:none}
+.lw{border-radius:7px;overflow:hidden;background:white;display:flex;align-items:center;justify-content:center;margin-bottom:4px;flex-shrink:0}
+.lw img{width:86%;height:86%;object-fit:contain;padding:0}
+#lw-animoca img,#lw-hedera img,#lw-vba img,#lw-sev img,#lw-varmeta img{width:96%;height:74%}
+#lw-hashpack img,#lw-basalpay img,#lw-opencampus img{width:90%;height:90%}
+#lw-sbv img,#lw-newborns img,#lw-onematrix img{width:94%;height:94%}
+#lw-alphatrue img{width:80%;height:80%}
+.lf{font-size:9px;font-weight:500;color:#555}
 .cn{font-size:11px;font-weight:500;color:var(--color-text-primary);line-height:1.2}
 .cd{font-size:9.5px;color:var(--color-text-secondary);margin-top:2px;line-height:1.25}
-.eco-col{display:flex;flex-direction:column;gap:4px;min-width:108px}
-.eco-card{padding:5px 8px;border-radius:7px;border:.5px solid rgba(0,0,0,.1);background:rgba(255,255,255,.6);cursor:pointer;transition:all .12s}
-.eco-card:hover{border-color:rgba(0,0,0,.25)}
-.eco-card.active{border-color:rgba(56,138,221,.6);box-shadow:0 0 0 2px rgba(56,138,221,.18)}
-.eco-name{font-size:11px;font-weight:500;color:var(--color-text-primary)}
-.eco-sub{font-size:9px;color:var(--color-text-secondary);margin-top:1px}
-.arr-row{padding:2px 0;text-align:center;font-size:9px;color:var(--color-text-tertiary);line-height:1.5}
-.fbadge{display:inline-block;font-size:8.5px;padding:1.5px 6px;border-radius:8px;border:.5px solid}
-.detail{margin-top:6px;border-radius:10px;border:.5px solid var(--color-border-secondary);background:var(--color-background-primary);padding:12px 14px;display:none}
-.detail.show{display:block}
-.ptag{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:6px;background:var(--color-background-secondary);border:.5px solid var(--color-border-tertiary);margin:2px;font-size:11px;color:var(--color-text-primary)}
-.ctag{display:inline-flex;align-items:center;padding:2px 7px;border-radius:8px;background:var(--color-background-secondary);border:.5px solid var(--color-border-tertiary);margin:2px;font-size:10px;color:var(--color-text-secondary);cursor:pointer}
-.ctag:hover{color:var(--color-text-primary)}
-.sect-lbl{font-size:9.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:4px}
+.ec{display:flex;flex-direction:column;gap:4px;min-width:112px}
+.ecd{padding:5px 8px;border-radius:7px;border:.5px solid rgba(0,0,0,.1);background:rgba(255,255,255,.6);cursor:pointer;transition:all .12s;display:flex;align-items:center;gap:6px}
+.ecd:hover{border-color:rgba(0,0,0,.25)}
+.ecd.act{border-color:rgba(56,138,221,.6);box-shadow:0 0 0 2px rgba(56,138,221,.18)}
+.en{font-size:11px;font-weight:500;color:var(--color-text-primary)}
+.es{font-size:9px;color:var(--color-text-secondary);margin-top:1px}
+.fb{display:inline-block;font-size:8.5px;padding:1.5px 6px;border-radius:8px;border:.5px solid}
+.dt{margin-top:6px;border-radius:10px;border:.5px solid var(--color-border-secondary);background:var(--color-background-primary);padding:12px 14px;display:none}
+.dt.sh{display:block}
+.pt{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:6px;background:var(--color-background-secondary);border:.5px solid var(--color-border-tertiary);margin:2px;font-size:11px;color:var(--color-text-primary)}
+.sl{font-size:9.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:4px}
+.ct{display:inline-flex;padding:2px 7px;border-radius:8px;background:var(--color-background-secondary);border:.5px solid var(--color-border-tertiary);margin:2px;font-size:10px;color:var(--color-text-secondary)}
 @media(prefers-color-scheme:dark){
-  .card,.eco-card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1)}
-  .card:hover,.eco-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
-  .card.active,.eco-card.active{border-color:rgba(100,150,255,.5);box-shadow:0 0 0 2px rgba(100,150,255,.15);background:rgba(255,255,255,.08)}
+.c,.ecd{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1)}
+.c:hover,.ecd:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+.c.act,.ecd.act{border-color:rgba(100,150,255,.5);background:rgba(255,255,255,.08)}
+.lw{background:rgba(255,255,255,.92)}
 }
 </style>
+</head>
 
-<div id="emap" style="font-family:var(--font-sans);padding:4px 0 8px">
-
-  <!-- Header -->
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:6px">
-    <div>
-      <div style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Ironman Vietnam &middot; Blockchain Sandbox Partner Ecosystem</div>
-      <div style="font-size:10.5px;color:var(--color-text-secondary);margin-top:2px">Danang IFC Pilot &mdash; click any entity to expand details</div>
-    </div>
-    <div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end">
-      <span class="fbadge" style="color:#0C447C;border-color:#85B7EB;background:rgba(56,138,221,.09)">F1 &middot; Cross-border sponsorship</span>
-      <span class="fbadge" style="color:#085041;border-color:#5DCAA5;background:rgba(29,158,117,.09)">F2 &middot; Vendor disbursement</span>
-      <span class="fbadge" style="color:#3C3489;border-color:#AFA9EC;background:rgba(127,119,221,.09)">F3 &middot; Purpose-bound giving</span>
-    </div>
-  </div>
-
-  <!-- LAYER 1: SPONSORSHIP -->
-  <div class="layer" style="background:rgba(56,138,221,.07);border:.5px solid rgba(56,138,221,.22)">
-    <div class="lbl" style="color:#0C447C">Layer 1 &middot; Sponsorship &mdash; digital assets contributed by global sponsors</div>
-    <div class="cards">
-
-      <div class="card" id="c-animoca" onclick="od('animoca')">
-        <div class="logo" style="background:rgba(56,138,221,.18);color:#0C447C">AB</div>
-        <div class="cn">Animoca Brands</div>
-        <div class="cd">KYC / AML forensics</div>
-      </div>
-
-      <div class="card" id="c-hedera" onclick="od('hedera')">
-        <div class="logo" style="background:rgba(29,158,117,.18);color:#085041">H</div>
-        <div class="cn">Hedera (Hashgraph)</div>
-        <div class="cd">Layer 1 blockchain</div>
-      </div>
-
-      <div class="card tbd">
-        <div class="logo" style="background:rgba(136,135,128,.15);color:var(--color-text-tertiary)">?</div>
-        <div class="cn" style="color:var(--color-text-secondary)">Sponsor 3</div>
-        <div class="cd">to be confirmed</div>
-      </div>
-
-      <div class="card tbd">
-        <div class="logo" style="background:rgba(136,135,128,.15);color:var(--color-text-tertiary)">?</div>
-        <div class="cn" style="color:var(--color-text-secondary)">Sponsor 4</div>
-        <div class="cd">to be confirmed</div>
-      </div>
-
-      <div class="card tbd">
-        <div class="logo" style="background:rgba(136,135,128,.15);color:var(--color-text-tertiary)">?</div>
-        <div class="cn" style="color:var(--color-text-secondary)">Sponsor 5</div>
-        <div class="cd">to be confirmed</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Arrow 1→2 -->
-  <div class="arr-row">
-    <span style="color:#185FA5">&#8595; USDT / USDC / ETH / HBAR</span> &rarr; HashPack &middot; Flow 1
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <span style="color:#534AB7">F3: charity stream</span> &rarr; Newborns VN / Open Campus
-  </div>
-
-  <!-- LAYER 2: CUSTODY & GATEWAY + Ecosystem sidebar -->
-  <div style="display:flex;gap:8px;align-items:stretch">
-    <div class="layer" style="flex:1;background:rgba(29,158,117,.07);border:.5px solid rgba(29,158,117,.22)">
-      <div class="lbl" style="color:#085041">Layer 2 &middot; Custody &amp; Payment Gateway</div>
-      <div class="cards" style="align-items:center">
-
-        <div class="card" id="c-hashpack" onclick="od('hashpack')">
-          <div class="logo" style="background:rgba(29,158,117,.18);color:#085041">HP</div>
-          <div class="cn">HashPack</div>
-          <div class="cd">Digital asset custody</div>
-          <div style="margin-top:4px;font-size:9px;color:var(--color-text-tertiary)">May Chan &middot; CEO</div>
-        </div>
-
-        <div style="font-size:14px;color:var(--color-text-tertiary);padding:0 2px;flex-shrink:0">&rarr;</div>
-
-        <div class="card" id="c-basalpay" onclick="od('basalpay')">
-          <div class="logo" style="background:rgba(239,159,39,.2);color:#633806">BP</div>
-          <div class="cn">Basal Pay</div>
-          <div class="cd">Crypto &rarr; VND gateway</div>
-          <div style="margin-top:4px;font-size:9px;color:var(--color-text-tertiary)">Dinh &middot; CEO &nbsp; Khoa &middot; PM</div>
-        </div>
-
-        <div style="padding:0 4px;flex-shrink:0">
-          <div style="font-size:8.5px;color:var(--color-text-tertiary);margin-bottom:3px">sandbox<br>license</div>
-          <div style="font-size:10px;padding:3px 6px;border-radius:5px;background:rgba(239,159,39,.12);border:.5px solid rgba(239,159,39,.3);color:#633806;white-space:nowrap">SBV &check;</div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Ecosystem sidebar -->
-    <div class="eco-col">
-      <div style="font-size:9px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:1px">Ecosystem</div>
-      <div class="eco-card" id="c-vba" onclick="od('vba')">
-        <div class="eco-name">VBA</div>
-        <div class="eco-sub">Regulatory bridge</div>
-      </div>
-      <div class="eco-card" id="c-onematrix" onclick="od('onematrix')">
-        <div class="eco-name">1Matrix</div>
-        <div class="eco-sub">VBSN infrastructure</div>
-      </div>
-      <div class="eco-card" id="c-alphatrue" onclick="od('alphatrue')">
-        <div class="eco-name">AlphaTrue</div>
-        <div class="eco-sub">Parent tech company</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Arrow 2→3 -->
-  <div class="arr-row">
-    <span style="color:#0F6E56">&#8595; VND conversion &rarr; SEV bank account &middot; Flow 1 complete</span>
-  </div>
-
-  <!-- LAYER 3: EVENT ORGANIZER -->
-  <div class="layer" style="background:rgba(186,117,23,.07);border:.5px solid rgba(186,117,23,.22)">
-    <div class="lbl" style="color:#633806">Layer 3 &middot; Event Organizer</div>
-    <div class="card" id="c-sev" onclick="od('sev')" style="flex-direction:row;align-items:center;gap:10px;flex:none;width:100%">
-      <div class="logo" style="background:rgba(186,117,23,.18);color:#633806;flex-shrink:0">SEV</div>
-      <div style="flex:1;min-width:0">
-        <div class="cn">Sunrise Events Vietnam (SEV)</div>
-        <div class="cd">Ironman 70.3 license holder &amp; event organizer &mdash; receives VND directly into existing bank accounts, no change to current systems</div>
-      </div>
-      <div style="display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0;max-width:240px">
-        <span class="ptag" style="font-size:9.5px">A. B&#7857;ng <span style="color:var(--color-text-secondary)">&middot; Chairman</span></span>
-        <span class="ptag" style="font-size:9.5px">Ch&#7883; Anh <span style="color:var(--color-text-secondary)">&middot; COO</span></span>
-        <span class="ptag" style="font-size:9.5px">Clair <span style="color:var(--color-text-secondary)">&middot; Chief Accountant</span></span>
-        <span class="ptag" style="font-size:9.5px">Thanh <span style="color:var(--color-text-secondary)">&middot; Strategy Analyst</span></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Arrow 3→4 -->
-  <div class="arr-row">
-    <span style="color:#0F6E56">&#8595; Local vendor payments (venue, F&amp;B, media) &middot; Flow 2</span>
-  </div>
-
-  <!-- LAYER 4: TECH + GOVERNMENT -->
-  <div style="display:flex;gap:8px;align-items:stretch">
-    <div class="layer" style="flex:1;background:rgba(127,119,221,.07);border:.5px solid rgba(127,119,221,.22)">
-      <div class="lbl" style="color:#3C3489">Layer 4 &middot; Tech Infrastructure &amp; Compliance (Varmeta)</div>
-      <div class="card" id="c-varmeta" onclick="od('varmeta')" style="flex-direction:row;align-items:center;gap:10px;flex:none;width:100%">
-        <div class="logo" style="background:rgba(127,119,221,.18);color:#3C3489;flex-shrink:0">VM</div>
-        <div style="flex:1;min-width:0">
-          <div class="cn">Varmeta &mdash; Tech Enabler &amp; Systems Architect</div>
-          <div class="cd">Integrates Hedera, Animoca, HashPack &amp; Basal Pay into Vietnam&rsquo;s operational environment. Built Tax Module auto-generating VAT invoices on every vendor payment.</div>
-        </div>
-        <div style="flex-shrink:0;padding:5px 8px;border-radius:7px;font-size:9px;background:rgba(127,119,221,.12);border:.5px solid rgba(127,119,221,.3);color:#3C3489;text-align:center;line-height:1.4">
-          Tax Module<br><span style="font-weight:500">&#8594; VAT Invoice</span>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;min-width:86px">
-      <div style="font-size:9px;color:var(--color-text-tertiary)">&#8594; submits to</div>
-      <div style="background:rgba(153,60,29,.07);border:.5px solid rgba(153,60,29,.22);border-radius:9px;padding:8px 10px;text-align:center;width:100%">
-        <div style="font-size:10px;font-weight:500;color:#712B13">Government</div>
-        <div style="font-size:8.5px;color:var(--color-text-secondary);margin-top:2px">State Bank<br>Tax Authority</div>
-        <div style="font-size:8px;color:rgba(153,60,29,.7);margin-top:4px;border-top:.5px solid rgba(153,60,29,.15);padding-top:4px">VAT invoices &#8594; gov</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Flow 3 section -->
-  <div style="margin-top:5px">
-    <div class="layer" style="background:rgba(127,119,221,.05);border:.5px solid rgba(127,119,221,.18)">
-      <div class="lbl" style="color:#3C3489">Flow 3 &middot; Purpose-bound giving &mdash; charity &amp; scholarships (ring-fenced at point of contribution)</div>
-      <div class="cards" style="align-items:center">
-        <div style="font-size:10px;color:var(--color-text-secondary);flex-shrink:0;margin-right:2px">Sponsors &#8594;</div>
-
-        <div class="card" id="c-newborns" onclick="od('newborns')" style="max-width:155px">
-          <div class="logo" style="background:rgba(127,119,221,.18);color:#3C3489">NVN</div>
-          <div class="cn">Newborns Vietnam</div>
-          <div class="cd">Neonatal care charity</div>
-        </div>
-
-        <div class="card" id="c-opencampus" onclick="od('opencampus')" style="max-width:155px">
-          <div class="logo" style="background:rgba(56,138,221,.18);color:#0C447C">OC</div>
-          <div class="cn">Open Campus</div>
-          <div class="cd">Education finance (Animoca)</div>
-        </div>
-
-        <div style="font-size:9.5px;color:var(--color-text-tertiary);flex:1;padding-left:8px;line-height:1.5">
-          Funds ring-fenced at point of contribution &middot; full KYC/AML compliance &middot; VAT invoice generated &middot; direct to recipient, not via SEV
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Detail Panel -->
-  <div id="detail" class="detail"></div>
-
+<body>
+<h2 class="sr-only">Ironman Vietnam blockchain sandbox partner ecosystem – click any card to expand details</h2>
+<div id="em" style="font-family:var(--font-sans);padding:4px 0 8px">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:6px">
+<div>
+<div style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Ironman Vietnam &middot; Blockchain Sandbox Partner Ecosystem</div>
+<div style="font-size:10.5px;color:var(--color-text-secondary);margin-top:2px">Danang IFC Pilot &mdash; click any entity to expand details</div>
 </div>
-
+<div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end">
+<span class="fb" style="color:#0C447C;border-color:#85B7EB;background:rgba(56,138,221,.09)">F1 &middot; Cross-border sponsorship</span>
+<span class="fb" style="color:#085041;border-color:#5DCAA5;background:rgba(29,158,117,.09)">F2 &middot; Vendor disbursement</span>
+<span class="fb" style="color:#3C3489;border-color:#AFA9EC;background:rgba(127,119,221,.09)">F3 &middot; Purpose-bound giving</span>
+</div>
+</div>
+<div class="ly" style="background:rgba(56,138,221,.07);border:.5px solid rgba(56,138,221,.22)">
+<div class="lb" style="color:#0C447C">Layer 1 &middot; Sponsorship &mdash; digital assets contributed by global sponsors</div>
+<div class="cs">
+<div class="c" id="c-animoca" onclick="od('animoca')">
+<div id="lw-animoca" class="lw" style="width:32px;height:32px"></div>
+<div class="cn">Animoca Brands</div>
+<div class="cd">KYC / AML forensics</div>
+</div>
+<div class="c" id="c-hedera" onclick="od('hedera')">
+<div id="lw-hedera" class="lw" style="width:32px;height:32px"></div>
+<div class="cn">Hedera (Hashgraph)</div>
+<div class="cd">Layer 1 blockchain</div>
+</div>
+<div class="c tbd">
+<div class="lw" style="width:32px;height:32px;background:rgba(136,135,128,.2)"><span class="lf">?</span></div>
+<div class="cn" style="color:var(--color-text-secondary)">Sponsor 3</div>
+<div class="cd">to be confirmed</div>
+</div>
+<div class="c tbd">
+<div class="lw" style="width:32px;height:32px;background:rgba(136,135,128,.2)"><span class="lf">?</span></div>
+<div class="cn" style="color:var(--color-text-secondary)">Sponsor 4</div>
+<div class="cd">to be confirmed</div>
+</div>
+<div class="c tbd">
+<div class="lw" style="width:32px;height:32px;background:rgba(136,135,128,.2)"><span class="lf">?</span></div>
+<div class="cn" style="color:var(--color-text-secondary)">Sponsor 5</div>
+<div class="cd">to be confirmed</div>
+</div>
+</div>
+</div>
+<div style="padding:2px 0;text-align:center;font-size:9px;color:var(--color-text-tertiary);line-height:1.8">
+<span style="color:#185FA5">&#8595; USDT / USDC / ETH / HBAR</span> &rarr; HashPack &middot; Flow 1 &nbsp;|&nbsp; <span style="color:#534AB7">F3: charity stream</span> &rarr; Newborns VN / Open Campus
+</div>
+<div style="display:flex;gap:8px;align-items:stretch">
+<div class="ly" style="flex:1;background:rgba(29,158,117,.07);border:.5px solid rgba(29,158,117,.22)">
+<div class="lb" style="color:#085041">Layer 2 &middot; Custody &amp; Payment Gateway</div>
+<div class="cs" style="align-items:center">
+<div class="c" id="c-hashpack" onclick="od('hashpack')">
+<div id="lw-hashpack" class="lw" style="width:32px;height:32px"></div>
+<div class="cn">HashPack</div>
+<div class="cd">Digital asset custody</div>
+<div style="margin-top:4px;font-size:9px;color:var(--color-text-tertiary)">May Chan &middot; CEO</div>
+</div>
+<div style="font-size:14px;color:var(--color-text-tertiary);padding:0 2px;flex-shrink:0">&rarr;</div>
+<div class="c" id="c-basalpay" onclick="od('basalpay')">
+<div id="lw-basalpay" class="lw" style="width:32px;height:32px"></div>
+<div class="cn">Basal Pay</div>
+<div class="cd">Crypto &rarr; VND gateway</div>
+<div style="margin-top:4px;font-size:9px;color:var(--color-text-tertiary)">Dinh &middot; CEO &nbsp; Khoa &middot; PM</div>
+</div>
+<div style="padding:0 4px;flex-shrink:0">
+<div style="font-size:8.5px;color:var(--color-text-tertiary);margin-bottom:3px">sandbox<br>license</div>
+<div style="font-size:10px;padding:3px 6px;border-radius:5px;background:rgba(239,159,39,.12);border:.5px solid rgba(239,159,39,.3);color:#633806;white-space:nowrap">SBV &#10003;</div>
+</div>
+</div>
+</div>
+<div class="ec">
+<div style="font-size:9px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:1px">Ecosystem</div>
+<div class="ecd" id="c-vba" onclick="od('vba')">
+<div id="lw-vba" class="lw" style="width:22px;height:22px;flex-shrink:0"></div>
+<div><div class="en">VBA</div><div class="es">Regulatory bridge</div></div>
+</div>
+<div class="ecd" id="c-onematrix" onclick="od('onematrix')">
+<div id="lw-onematrix" class="lw" style="width:22px;height:22px;flex-shrink:0"></div>
+<div><div class="en">1Matrix</div><div class="es">VBSN infrastructure</div></div>
+</div>
+<div class="ecd" id="c-alphatrue" onclick="od('alphatrue')">
+<div id="lw-alphatrue" class="lw" style="width:22px;height:22px;flex-shrink:0"></div>
+<div><div class="en">AlphaTrue</div><div class="es">Parent tech company</div></div>
+</div>
+</div>
+</div>
+<div style="padding:2px 0;text-align:center;font-size:9px;color:var(--color-text-tertiary);line-height:1.8">
+<span style="color:#0F6E56">&#8595; VND conversion &rarr; SEV bank account &middot; Flow 1 complete</span>
+</div>
+<div class="ly" style="background:rgba(186,117,23,.07);border:.5px solid rgba(186,117,23,.22)">
+<div class="lb" style="color:#633806">Layer 3 &middot; Event Organizer</div>
+<div class="c" id="c-sev" onclick="od('sev')" style="flex-direction:row;align-items:center;gap:10px;flex:none;width:100%">
+<div id="lw-sev" class="lw" style="width:56px;height:36px;flex-shrink:0"></div>
+<div style="flex:1;min-width:0">
+<div class="cn">Sunrise Events Vietnam (SEV)</div>
+<div class="cd">Ironman 70.3 license holder &amp; event organizer &mdash; receives VND directly into existing bank accounts, no change to current systems</div>
+</div>
+<div style="display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0;max-width:240px">
+<span class="pt" style="font-size:9.5px">A. B&#7857;ng <span style="color:var(--color-text-secondary)">&middot; Chairman</span></span>
+<span class="pt" style="font-size:9.5px">Ch&#7883; Anh <span style="color:var(--color-text-secondary)">&middot; COO</span></span>
+<span class="pt" style="font-size:9.5px">Clair <span style="color:var(--color-text-secondary)">&middot; Chief Accountant</span></span>
+<span class="pt" style="font-size:9.5px">Thanh <span style="color:var(--color-text-secondary)">&middot; Strategy Analyst</span></span>
+</div>
+</div>
+</div>
+<div style="padding:2px 0;text-align:center;font-size:9px;color:var(--color-text-tertiary);line-height:1.8">
+<span style="color:#0F6E56">&#8595; Local vendor payments (venue, F&amp;B, media) &middot; Flow 2</span>
+</div>
+<div style="display:flex;gap:8px;align-items:stretch">
+<div class="ly" style="flex:1;background:rgba(127,119,221,.07);border:.5px solid rgba(127,119,221,.22)">
+<div class="lb" style="color:#3C3489">Layer 4 &middot; Tech Infrastructure &amp; Compliance</div>
+<div class="c" id="c-varmeta" onclick="od('varmeta')" style="flex-direction:row;align-items:flex-start;gap:10px;flex:none;width:100%">
+<div id="lw-varmeta" class="lw" style="width:40px;height:40px;flex-shrink:0"></div>
+<div style="flex:1;min-width:0">
+<div class="cn">Varmeta &mdash; Tech Enabler &amp; Systems Architect</div>
+<div class="cd">Facilitates Hedera, Animoca, HashPack &amp; Basal Pay into Vietnam&rsquo;s operational environment. Tax Module auto-generates VAT invoices &rarr; <span style="font-weight:500;color:var(--color-text-primary)">SInvoice (Viettel)</span> &amp; <span style="font-weight:500;color:var(--color-text-primary)">MEInvoice (Misa)</span>.</div>
+<div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:5px">
+<span class="pt" style="font-size:9px">Nha Tran <span style="color:var(--color-text-secondary)">&middot; CEO</span></span>
+<span class="pt" style="font-size:9px">Felix Nguyen <span style="color:var(--color-text-secondary)">&middot; Tech Lead &amp; PM</span></span>
+<span class="pt" style="font-size:9px">Julie Pham <span style="color:var(--color-text-secondary)">&middot; Main Contact</span></span>
+</div>
+</div>
+<div style="flex-shrink:0;padding:6px 9px;border-radius:7px;font-size:9px;background:rgba(127,119,221,.12);border:.5px solid rgba(127,119,221,.3);color:#3C3489;text-align:center;line-height:1.65">
+Tax Module<br><span style="font-weight:500">SInvoice</span><br><span style="font-weight:500">MEInvoice</span><br><span style="color:#534AB7;font-size:8.5px">&rarr; Gov</span>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;min-width:90px">
+<div style="font-size:9px;color:var(--color-text-tertiary)">&rarr; submits to</div>
+<div id="c-sbv" onclick="od('sbv')" style="background:rgba(153,60,29,.07);border:.5px solid rgba(153,60,29,.22);border-radius:9px;padding:8px 10px;text-align:center;width:100%;cursor:pointer">
+<div id="lw-sbv" class="lw" style="width:44px;height:44px;margin:0 auto 4px"></div>
+<div style="font-size:10px;font-weight:500;color:#712B13">Government</div>
+<div style="font-size:8.5px;color:var(--color-text-secondary);margin-top:2px">State Bank &middot; Tax Auth.</div>
+<div style="font-size:8px;color:rgba(153,60,29,.7);margin-top:4px;border-top:.5px solid rgba(153,60,29,.15);padding-top:4px">VAT invoices &#10003;</div>
+</div>
+</div>
+</div>
+<div style="margin-top:5px">
+<div class="ly" style="background:rgba(127,119,221,.05);border:.5px solid rgba(127,119,221,.18)">
+<div class="lb" style="color:#3C3489">Flow 3 &middot; Purpose-bound giving &mdash; charity &amp; scholarships (ring-fenced at point of contribution)</div>
+<div class="cs" style="align-items:center">
+<div style="font-size:10px;color:var(--color-text-secondary);flex-shrink:0;margin-right:2px">Sponsors &rarr;</div>
+<div class="c" id="c-newborns" onclick="od('newborns')" style="max-width:155px">
+<div id="lw-newborns" class="lw" style="width:32px;height:32px"></div>
+<div class="cn">Newborns Vietnam</div>
+<div class="cd">Neonatal care charity</div>
+</div>
+<div class="c" id="c-opencampus" onclick="od('opencampus')" style="max-width:180px">
+<div id="lw-opencampus" class="lw" style="width:32px;height:32px"></div>
+<div class="cn">Open Campus</div>
+<div class="cd">Education finance (Animoca)</div>
+<div style="margin-top:3px;font-size:9px;color:var(--color-text-tertiary)">Shan Han &middot; Jonah Lau</div>
+</div>
+<div style="font-size:9.5px;color:var(--color-text-tertiary);flex:1;padding-left:8px;line-height:1.55">
+Ring-fenced at contribution &middot; full KYC/AML &middot; VAT invoice generated &middot; direct to recipient, not via SEV
+</div>
+</div>
+</div>
+</div>
+<div id="detail" class="dt"></div>
+</div>
 <script>
+const LG_KEYS=["animoca","hedera","hashpack","basalpay","sev","sbv","varmeta","onematrix","alphatrue","newborns","opencampus","vba"];
+const LG_FB={"animoca":"AB","hedera":"\u210f","hashpack":"HP","basalpay":"BP","sev":"SEV","sbv":"SBV","varmeta":"VM","onematrix":"1M","alphatrue":"AT","newborns":"NVN","opencampus":"OC","vba":"VBA"};
+function loadLogos(data){
+Object.keys(data).forEach(k=>{
+const el=document.getElementById('lw-'+k);
+if(!el)return;
+const img=document.createElement('img');
+img.src=data[k];img.alt=LG_FB[k]||k;
+img.style.cssText='width:86%;height:86%;object-fit:contain;padding:0';
+const fb=LG_FB[k]||k;
+img.onerror=function(){this.onerror=null;this.parentNode.innerHTML='<span style="font-size:9px;font-weight:500;color:#555">'+fb+'</span>';};
+el.appendChild(img);
+});
+}
 const D={
-  animoca:{name:'Animoca Brands',role:'KYC & AML forensics provider',desc:'Global web3 operator providing real-time forensic KYC/AML compliance over all sponsorship inflows. Every transaction receives a forensic trail satisfying FATF requirements — critical to Vietnam\'s effort to exit the FATF gray list. Animoca has deployed this compliance infrastructure in live contexts including a charity relief fund in Hong Kong requiring real-time source verification of crypto donations.',people:[],connected:['Open Campus (portfolio company)','Hedera (infrastructure layer)','Basal Pay (compliance feeds into)'],flows:['F1 – KYC/AML forensic overlay on all cross-border sponsorship inflows','F3 – Compliance layer on purpose-bound charitable contributions']},
-  hedera:{name:'Hedera (Hashgraph)',role:'Layer 1 blockchain & USDC access',desc:'Enterprise-grade distributed ledger providing the core blockchain infrastructure for the pilot. The Governing Council includes Google, IBM, and Boeing. Previously deployed in live institutional settings including tokenized UK money market funds used as collateral in FX trades between Lloyds Banking Group and Aberdeen. Provides USDC access for institutional-grade settlement.',people:[{name:'Jeff',role:'Executive Director'}],connected:['HashPack (native wallet & settlement)','Varmeta (full-stack integration)','Basal Pay (asset flow)'],flows:['F1 – Base settlement layer for all digital asset flows']},
-  hashpack:{name:'HashPack',role:'Digital asset custody & settlement',desc:'Primary wallet and custody infrastructure within the Hedera ecosystem. Supports both USDC (the global institutional standard, used by major banks for interbank settlement) and USDT (the Vietnamese local market standard) — making it the single wallet layer that covers both the global institutional and local retail audiences within one infrastructure.',people:[{name:'May Chan',role:'CEO'}],connected:['Hedera (infrastructure)','Basal Pay (outbound settlement)'],flows:['F1 – Receives and holds sponsor digital assets','F1 – Routes assets to Basal Pay for VND conversion']},
-  basalpay:{name:'Basal Pay',role:'Licensed crypto → VND conversion gateway',desc:'The only entity in this consortium holding a State Bank of Vietnam sandbox license to legally convert digital assets to VND within the Danang IFC framework. This license — Vietnam\'s first of its kind — is what makes the payment flows legally operational rather than just technically possible. Developed by AlphaTrue. Dinh also chairs VBA\'s Fintech Application Committee, directly connecting this pilot to national policy.',people:[{name:'Dinh',role:'CEO (Basal Pay & AlphaTrue)'},{name:'Khoa',role:'Project Manager'}],connected:['HashPack (digital asset inflow)','SEV (VND outbound to bank account)','VBA (regulatory & policy bridge)','1Matrix (VBSN infra integration)','AlphaTrue (parent technology platform)'],flows:['F1 – Converts crypto to VND, settles into SEV existing bank account','F2 – Triggers VAT-compliant invoice via Varmeta Tax Module on each vendor payment','F3 – Processes purpose-bound charity flows with full KYC/AML & tax compliance']},
-  sev:{name:'Sunrise Events Vietnam (SEV)',role:'Event organizer & Ironman license holder',desc:'Holds the Ironman 70.3 race license and provides the operational environment for the entire pilot. SEV receives VND directly into its existing bank account — no changes to existing financial systems are required. SEV also disburses local vendor payments (venue, F&B, media) during race weekend, triggering Flow 2 and the VAT invoice generation.',people:[{name:'A. Bằng',role:'Chairman'},{name:'Chị Anh',role:'COO'},{name:'Clair',role:'Chief Accountant'},{name:'Thanh',role:'Strategy Analyst'}],connected:['Basal Pay (receives converted VND)','Varmeta (Tax Module integration for vendor payments)','Local vendors – venue, F&B, media (Flow 2 recipients)'],flows:['F1 – Terminal VND recipient of converted sponsorship funds','F2 – Disburses to local vendors; each payment auto-generates VAT invoice']},
-  varmeta:{name:'Varmeta',role:'Tech Enabler & Systems Architect',desc:'The systems integrator connecting every global component — Hedera blockchain, Animoca compliance, HashPack custody, Basal Pay gateway — into Vietnam\'s operational environment. Built and operates the Tax Module: every time SEV pays a local vendor, the module auto-generates a VAT-compliant invoice submitted to the Vietnamese government. Track record includes Bitkub (Thailand\'s largest digital asset exchange) and KLDX (Malaysia\'s first SEC-licensed IEO exchange).',people:[{name:'Core engineering team',role:'Build, integration & deployment'}],connected:['All consortium layers (systems integration)','Tax Module → Government (VAT reporting)','SEV (vendor payment hook)','Hedera / Animoca / HashPack / Basal Pay'],flows:['F1 / F2 / F3 – All flows close with a VAT invoice submitted by Varmeta Tax Module'],highlight:'The pilot ends with a government-readable VAT report — proving the full closed compliance loop.'},
-  vba:{name:'VBA – Vietnam Blockchain Association',role:'Regulatory bridge & policy body',desc:'The official professional body bridging blockchain businesses with state regulators and government ministries. Dinh (CEO of Basal Pay and AlphaTrue) serves as Chair of VBA\'s Fintech Application Committee — creating a direct channel between this live sandbox pilot and national digital asset policy-making and standardization efforts.',people:[{name:'Dinh',role:'Chair, Fintech Application Committee'}],connected:['Basal Pay (direct link via Dinh)','State regulators & government ministries'],flows:['Policy & regulatory bridge between the sandbox pilot and national framework']},
-  onematrix:{name:'1Matrix',role:'Vietnam Blockchain Service Network (VBSN)',desc:'Core technology company building the VBSN (Vietnam Blockchain Service Network) under a "Make in Vietnam" mandate. The Basal Pay–1Matrix integration creates a pathway for transactions demonstrated in this sandbox to eventually connect into national blockchain infrastructure at scale, beyond the scope of a single event.',people:[],connected:['Basal Pay (technical integration)','National blockchain infrastructure (future)'],flows:['Future: sandbox transactions → national-scale blockchain integration']},
-  alphatrue:{name:'AlphaTrue',role:'Parent technology company behind Basal Pay',desc:'Provides the core technology platform enabling Basal Pay to meet FATF Travel Rule standards and all compliance requirements needed for the State Bank sandbox license. CEO Dinh leads both AlphaTrue and Basal Pay, ensuring tight product-compliance alignment across both organizations.',people:[{name:'Dinh',role:'CEO'}],connected:['Basal Pay (product built on AlphaTrue platform)'],flows:['Core compliance & payment technology platform powering Basal Pay operations']},
-  newborns:{name:'Newborns Vietnam',role:'Charity recipient — neonatal care (Flow 3)',desc:'Neonatal care organization operating across Vietnamese hospitals for over a decade. Their pilot at Danang Women and Children\'s Hospital reduced infant mortality by over 50% in its first two years. In Flow 3, international sponsors contribute directly to Newborns VN — funds are ring-fenced at point of contribution, KYC/AML compliant, and arrive without being routed through SEV\'s operational budget.',people:[],connected:['International sponsors (direct charitable giving)','Basal Pay (compliant processing & conversion)'],flows:['F3 – Receives purpose-bound charitable donations, end-to-end auditable and tax-documented']},
-  opencampus:{name:'Open Campus',role:'Education finance & credentials (Animoca portfolio)',desc:'Animoca Brands portfolio company exploring education lending and blockchain-verified credentialing. In Vietnam, already partnered with Luvia (Ministry of Education-backed initiative) to deliver blockchain-verified credentials to approximately 200,000 students across partner schools. Within the IFC\'s long-term agenda, Open Campus explores scholarship finance and education access programs for qualifying athletes and students in Danang.',people:[],connected:['Animoca Brands (portfolio parent)','Luvia / Ministry of Education (Vietnam partner)'],flows:['F3 – Future: scholarship finance for qualifying athletes and students']}
+animoca:{name:"Animoca Brands",role:"KYC & AML forensics provider",desc:"Global web3 operator providing real-time forensic KYC/AML compliance over all sponsorship inflows. Every transaction receives a forensic trail satisfying FATF requirements — critical to Vietnam's effort to exit the FATF gray list. Parent company of Open Campus.",people:[{name:"Shan Han",role:"Portfolio Manager"},{name:"Jonah Lau",role:"Head of Portfolio & Incubator"}],connected:["Open Campus (portfolio company)","Hedera (infrastructure layer)","Basal Pay (compliance feeds into)"],flows:["F1 – KYC/AML forensic overlay on all cross-border sponsorship inflows","F3 – Compliance layer on purpose-bound charitable contributions"]},
+hedera:{name:"Hedera (Hashgraph)",role:"Layer 1 blockchain & USDC access",desc:"Enterprise-grade distributed ledger providing the core blockchain infrastructure. Governing Council includes Google, IBM, Boeing. Previously deployed in live institutional settings including tokenized UK money market funds used as collateral in FX trades between Lloyds Banking Group and Aberdeen.",people:[{name:"Jeff",role:"Executive Director"}],connected:["HashPack (native wallet & settlement)","Varmeta (full-stack integration)","Basal Pay (asset flow)"],flows:["F1 – Base settlement layer for all digital asset flows"]},
+hashpack:{name:"HashPack",role:"Digital asset custody & settlement",desc:"Primary wallet and custody infrastructure within the Hedera ecosystem. Supports USDC (global institutional standard used by major banks for settlement) and USDT (Vietnamese local market standard) — covering both audiences in a single wallet infrastructure.",people:[{name:"May Chan",role:"CEO"}],connected:["Hedera (infrastructure)","Basal Pay (outbound settlement)"],flows:["F1 – Receives and holds sponsor digital assets","F1 – Routes assets to Basal Pay for VND conversion"]},
+basalpay:{name:"Basal Pay",role:"Licensed crypto \u2192 VND conversion gateway",desc:"Holds a State Bank of Vietnam sandbox license to legally convert digital assets to VND within the Danang IFC framework — Vietnam's first of its kind. Developed by AlphaTrue. CEO Dinh chairs VBA's Fintech Application Committee, connecting this pilot directly to national policy.",people:[{name:"Dinh",role:"CEO (Basal Pay & AlphaTrue)"},{name:"Khoa",role:"Project Manager"}],connected:["HashPack (digital asset inflow)","SEV (VND outbound to bank account)","VBA (regulatory & policy bridge)","1Matrix (VBSN integration)","AlphaTrue (parent technology platform)"],flows:["F1 – Converts crypto to VND, settles into SEV existing bank account","F2 – Triggers VAT-compliant invoice via Varmeta Tax Module on each vendor payment","F3 – Processes purpose-bound charity flows with full KYC/AML & tax compliance"]},
+sev:{name:"Sunrise Events Vietnam (SEV)",role:"Event organizer & Ironman license holder",desc:"Holds the Ironman 70.3 race license and provides the operational environment for the entire pilot. Receives VND directly into its existing bank account — no changes to existing financial systems required. Also disburses local vendor payments (venue, F&B, media) triggering Flow 2 and VAT invoice generation.",people:[{name:"A. B\u1eb1ng",role:"Chairman"},{name:"Ch\u1ecb Anh",role:"COO"},{name:"Clair",role:"Chief Accountant"},{name:"Thanh",role:"Strategy Analyst"}],connected:["Basal Pay (receives converted VND)","Varmeta (Tax Module integration for vendor payments)","Local vendors – venue, F&B, media (Flow 2 recipients)"],flows:["F1 – Terminal VND recipient of converted sponsorship funds","F2 – Disburses to local vendors; each payment auto-generates VAT invoice"]},
+varmeta:{name:"Varmeta",role:"Tech Enabler & Systems Architect",desc:"Facilitates every global component — Hedera blockchain, Animoca compliance, HashPack custody, Basal Pay gateway — into Vietnam's operational environment. Built and operates the Tax Module: every time SEV pays a local vendor, the module auto-generates a VAT-compliant invoice submitted to government via SInvoice (Viettel) and MEInvoice (Misa). Track record: Bitkub (Thailand's #1 digital asset exchange) and KLDX (Malaysia's first SEC-licensed IEO exchange).",people:[{name:"Nha Tran",role:"CEO"},{name:"Felix Nguyen",role:"Tech Lead & PM"},{name:"Julie Pham",role:"Main Contact"}],connected:["All consortium layers (systems integration)","Tax Module \u2192 SInvoice (Viettel) \u2192 Government","Tax Module \u2192 MEInvoice (Misa) \u2192 Government","SEV (vendor payment hook)"],flows:["F1 / F2 / F3 – All flows close with a VAT invoice submitted via SInvoice or MEInvoice"],highlight:"The pilot ends with a government-readable VAT report submitted via SInvoice (Viettel) and MEInvoice (Misa) — proving the full closed compliance loop."},
+vba:{name:"VBA – Vietnam Blockchain Association",role:"Regulatory bridge & policy body",desc:"Official professional body bridging blockchain businesses with state regulators and government ministries. CEO Dinh serves as Chair of VBA's Fintech Application Committee — creating a direct channel between this sandbox pilot and national digital asset policy-making.",people:[{name:"Dinh",role:"Chair, Fintech Application Committee"}],connected:["Basal Pay (direct link via Dinh)","State regulators & government ministries"],flows:["Policy & regulatory bridge between the sandbox pilot and national framework"]},
+onematrix:{name:"1Matrix",role:"Vietnam Blockchain Service Network (VBSN)",desc:"Core technology company building the VBSN under a \"Make in Vietnam\" mandate. The Basal Pay–1Matrix integration creates a pathway for sandbox transactions to eventually connect into national blockchain infrastructure at scale.",people:[],connected:["Basal Pay (technical integration)","National blockchain infrastructure (future)"],flows:["Future: sandbox transactions \u2192 national-scale blockchain integration"]},
+alphatrue:{name:"AlphaTrue",role:"Parent technology company behind Basal Pay",desc:"Provides the core technology platform enabling Basal Pay to meet FATF Travel Rule standards and all compliance requirements for the State Bank sandbox license. CEO Dinh leads both AlphaTrue and Basal Pay.",people:[{name:"Dinh",role:"CEO"}],connected:["Basal Pay (product built on AlphaTrue platform)"],flows:["Core compliance & payment technology platform powering Basal Pay operations"]},
+newborns:{name:"Newborns Vietnam",role:"Charity recipient — neonatal care (Flow 3)",desc:"Neonatal care organization operating across Vietnamese hospitals for over a decade. Pilot at Danang Women and Children's Hospital reduced infant mortality by over 50% in its first two years. In Flow 3, international sponsors contribute directly — funds are ring-fenced, KYC/AML compliant, and arrive without routing through SEV's budget.",people:[],connected:["International sponsors (direct charitable giving)","Basal Pay (compliant processing & conversion)"],flows:["F3 – Receives purpose-bound charitable donations, end-to-end auditable and tax-documented"]},
+opencampus:{name:"Open Campus",role:"Education finance & credentials (Animoca portfolio)",desc:"Animoca Brands portfolio company exploring education lending and blockchain-verified credentialing. In Vietnam, partnered with Luvia (MoET-backed) to deliver blockchain credentials to ~200,000 students. Within the IFC agenda, explores scholarship finance for qualifying athletes and students in Danang.",people:[{name:"Shan Han",role:"Portfolio Manager"},{name:"Jonah Lau",role:"Head of Portfolio & Incubator"}],connected:["Animoca Brands (portfolio parent)","Luvia / Ministry of Education (Vietnam partner)"],flows:["F3 – Future: scholarship finance for qualifying athletes and students"]},
+sbv:{name:"State Bank of Vietnam (SBV)",role:"Regulatory authority & sandbox licensor",desc:"Vietnam's central bank and issuing authority for Basal Pay's sandbox license (Resolution No. 222/2025/QH15). All VAT invoices and compliance records from this pilot flow back to government systems via SInvoice (Viettel) and MEInvoice (Misa), demonstrating full regulatory traceability.",people:[],connected:["Basal Pay (sandbox license granted)","Varmeta Tax Module (receives VAT submissions via SInvoice & MEInvoice)"],flows:["Receives VAT records from all three payment flows via SInvoice & MEInvoice"]}
 };
-
 let active=null;
 function od(id){
-  const p=document.getElementById('detail');
-  if(active){const el=document.getElementById('c-'+active);if(el)el.classList.remove('active');}
-  if(active===id){active=null;p.classList.remove('show');return;}
-  active=id;
-  const el=document.getElementById('c-'+id);if(el)el.classList.add('active');
-  const d=D[id];if(!d)return;
-  const ph=d.people.length?`<div style="margin-top:9px"><div class="sect-lbl">Key personnel</div>${d.people.map(p=>`<span class="ptag">${p.name} <span style="color:var(--color-text-secondary);font-size:10px">&middot; ${p.role}</span></span>`).join('')}</div>`:'';
-  const ch=d.connected.length?`<div style="margin-top:9px"><div class="sect-lbl">Connected to</div>${d.connected.map(c=>`<span class="ctag">${c}</span>`).join('')}</div>`:'';
-  const fh=d.flows.length?`<div style="margin-top:9px"><div class="sect-lbl">Payment flows</div>${d.flows.map(f=>`<div style="font-size:11px;color:var(--color-text-secondary);padding:2.5px 0;border-bottom:.5px solid var(--color-border-tertiary)">${f}</div>`).join('')}</div>`:'';
-  const hh=d.highlight?`<div style="margin-top:9px;padding:6px 10px;border-radius:7px;background:rgba(127,119,221,.1);border:.5px solid rgba(127,119,221,.3);font-size:11px;color:#3C3489">${d.highlight}</div>`:'';
-  p.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px"><div><div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">${d.name}</div><div style="font-size:11px;color:var(--color-text-secondary);margin-top:1px">${d.role}</div></div><button onclick="cd()" style="background:none;border:none;cursor:pointer;color:var(--color-text-tertiary);padding:0 2px;font-size:17px;line-height:1">&times;</button></div><div style="font-size:12px;color:var(--color-text-secondary);line-height:1.65">${d.desc}</div>${ph}${ch}${fh}${hh}`;
-  p.classList.add('show');
-  setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+const p=document.getElementById('detail');
+if(active){const el=document.getElementById('c-'+active);if(el)el.classList.remove('act');}
+if(active===id){active=null;p.classList.remove('sh');return;}
+active=id;
+const el=document.getElementById('c-'+id);if(el)el.classList.add('act');
+const d=D[id];if(!d)return;
+const ph=d.people&&d.people.length?`<div style="margin-top:9px"><div class="sl">Key personnel</div>${d.people.map(p=>`<span class="pt">${p.name} <span style="color:var(--color-text-secondary);font-size:10px">&middot; ${p.role}</span></span>`).join('')}</div>`:'';
+const ch=d.connected&&d.connected.length?`<div style="margin-top:9px"><div class="sl">Connected to</div>${d.connected.map(c=>`<span class="ct">${c}</span>`).join('')}</div>`:'';
+const fh=d.flows&&d.flows.length?`<div style="margin-top:9px"><div class="sl">Payment flows</div>${d.flows.map(f=>`<div style="font-size:11px;color:var(--color-text-secondary);padding:2.5px 0;border-bottom:.5px solid var(--color-border-tertiary)">${f}</div>`).join('')}</div>`:'';
+const hh=d.highlight?`<div style="margin-top:9px;padding:6px 10px;border-radius:7px;background:rgba(127,119,221,.1);border:.5px solid rgba(127,119,221,.3);font-size:11px;color:#3C3489">${d.highlight}</div>`:'';
+p.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px"><div><div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">${d.name}</div><div style="font-size:11px;color:var(--color-text-secondary);margin-top:1px">${d.role}</div></div><button onclick="cd()" style="background:none;border:none;cursor:pointer;color:var(--color-text-tertiary);padding:0 2px;font-size:17px;line-height:1">&times;</button></div><div style="font-size:12px;color:var(--color-text-secondary);line-height:1.65">${d.desc}</div>${ph}${ch}${fh}${hh}`;
+p.classList.add('sh');
+setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
 }
 function cd(){
-  document.getElementById('detail').classList.remove('show');
-  if(active){const el=document.getElementById('c-'+active);if(el)el.classList.remove('active');active=null;}
+document.getElementById('detail').classList.remove('sh');
+if(active){const el=document.getElementById('c-'+active);if(el)el.classList.remove('act');active=null;}
 }
+fetch('/mnt/user-data/outputs/logos_payload.json').catch(()=>{}).then(()=>{});
+(function injectLogos(){
+try{
+const raw='{"animoca":"https://cdn.prod.website-files.com/694b47ff8f3088ab9288889c/694b47ff8f3088ab928888ff_logo.svg","hedera":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGaq2RjLO-OBduXvNnOGzDEA34VzM2OlgSUQ&s","sbv":"https://cdn.haitrieu.com/wp-content/uploads/2022/08/logo-ngan-hang-nha-nuoc-viet-nam-300x213.png","hashpack":"https://play-lh.googleusercontent.com/iFpAMOykLLlqE6yqZEG9mzhhmIVWIp5zTixNSneboNWn-uDqeEh8ZjUtc0wniLAPQ6I","vba":"https://cdn.prod.website-files.com/6399ae70ea78b063096903a1/65d6ce7c6073c98a3f7e671d_vba.svg","basalpay":"https://play-lh.googleusercontent.com/NpMa48iXaRLPZns-RxRLoAcDe_nS0BMhePNPatlCWTzI_LKDZBkh8DtbDugfrOY0xe2I","onematrix":"https://itviec.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NjQ0OTA0MSwicHVyIjoiYmxvYl9pZCJ9fQ==--f7c0d5a12dd12b0e04954091d83f58fd763c617d/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemVfdG9fbGltaXQiOlszMDAsMzAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa1464e8e6bcd982de6964c22807119ec733febd/B%E1%BA%A3n%20sao%20c%E1%BB%A7a%20b1.png","alphatrue":"https://alphatrue.com/favicon.ico","sev":"https://images.squarespace-cdn.com/content/v1/64a5313a22a3ea442ad91ae9/d161b9eb-5cb5-4484-a4f0-39a82e4c59c8/Logo+SEV.png","opencampus":"https://s3.coinmarketcap.com/static-gravity/image/60f1fc5d85f2463881db170b6d740876.png","newborns":"https://homepage.momocdn.net/img/momo-upload-api-231212135255-638379859759875678.jpg","varmeta":"https://images.glints.com/unsafe/glints-dashboard.oss-ap-southeast-1.aliyuncs.com/company-logo/d578de75703bb388790d2f66c5785c00.png"}';
+if(raw.length>10){const data=JSON.parse(raw);loadLogos(data);}
+}catch(e){}
+})();
 </script>
+</body>
+</html>
