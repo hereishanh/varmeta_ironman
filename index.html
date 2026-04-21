@@ -109,7 +109,10 @@
 </div>
 <div style="padding:0 4px;flex-shrink:0">
 <div style="font-size:8.5px;color:var(--color-text-tertiary);margin-bottom:3px">sandbox<br>license</div>
-<div style="font-size:10px;padding:3px 6px;border-radius:5px;background:rgba(239,159,39,.12);border:.5px solid rgba(239,159,39,.3);color:#633806;white-space:nowrap">SBV &#10003;</div>
+<div style="font-size:10px;padding:3px 6px;border-radius:5px;background:rgba(239,159,39,.12);border:.5px solid rgba(239,159,39,.3);color:#633806;white-space:nowrap;display:flex;align-items:center;gap:4px">
+<img src="https://cdn.haitrieu.com/wp-content/uploads/2022/08/logo-ngan-hang-nha-nuoc-viet-nam-300x213.png" alt="SBV" style="width:13px;height:13px;object-fit:contain">
+SBV &#10003;
+</div>
 </div>
 </div>
 </div>
@@ -172,8 +175,8 @@ Tax Module<br><span style="font-weight:500">SInvoice</span><br><span style="font
 </div>
 <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;min-width:90px">
 <div style="font-size:9px;color:var(--color-text-tertiary)">&rarr; submits to</div>
-<div id="c-sbv" onclick="od('sbv')" style="background:rgba(153,60,29,.07);border:.5px solid rgba(153,60,29,.22);border-radius:9px;padding:8px 10px;text-align:center;width:100%;cursor:pointer">
-<div id="lw-sbv" class="lw" style="width:44px;height:44px;margin:0 auto 4px"></div>
+<div style="background:rgba(153,60,29,.07);border:.5px solid rgba(153,60,29,.22);border-radius:9px;padding:8px 10px;text-align:center;width:100%">
+<div id="lw-government" class="lw" style="width:44px;height:44px;margin:0 auto 4px"></div>
 <div style="font-size:10px;font-weight:500;color:#712B13">Government</div>
 <div style="font-size:8.5px;color:var(--color-text-secondary);margin-top:2px">State Bank &middot; Tax Auth.</div>
 <div style="font-size:8px;color:rgba(153,60,29,.7);margin-top:4px;border-top:.5px solid rgba(153,60,29,.15);padding-top:4px">VAT invoices &#10003;</div>
@@ -205,8 +208,8 @@ Ring-fenced at contribution &middot; full KYC/AML &middot; VAT invoice generated
 <div id="detail" class="dt"></div>
 </div>
 <script>
-const LG_KEYS=["animoca","hedera","hashpack","basalpay","sev","sbv","varmeta","onematrix","alphatrue","newborns","opencampus","vba"];
-const LG_FB={"animoca":"AB","hedera":"\u210f","hashpack":"HP","basalpay":"BP","sev":"SEV","sbv":"SBV","varmeta":"VM","onematrix":"1M","alphatrue":"AT","newborns":"NVN","opencampus":"OC","vba":"VBA"};
+const LG_KEYS=["animoca","hedera","hashpack","basalpay","sev","sbv","government","varmeta","onematrix","alphatrue","newborns","opencampus","vba"];
+const LG_FB={"animoca":"AB","hedera":"\u210f","hashpack":"HP","basalpay":"BP","sev":"SEV","sbv":"SBV","government":"GOV","varmeta":"VM","onematrix":"1M","alphatrue":"AT","newborns":"NVN","opencampus":"OC","vba":"VBA"};
 function loadLogos(data){
 Object.keys(data).forEach(k=>{
 const el=document.getElementById('lw-'+k);
@@ -241,11 +244,12 @@ if(active===id){active=null;p.classList.remove('sh');return;}
 active=id;
 const el=document.getElementById('c-'+id);if(el)el.classList.add('act');
 const d=D[id];if(!d)return;
+const logo=(window.LOGO_DATA&&window.LOGO_DATA[id])?`<div style="width:42px;height:42px;border-radius:8px;border:.5px solid rgba(0,0,0,.12);background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0"><img src="${window.LOGO_DATA[id]}" alt="${d.name}" style="width:90%;height:90%;object-fit:contain" onerror="this.parentNode.innerHTML='<span style=\'font-size:9px;font-weight:500;color:#555\'>${LG_FB[id]||id}</span>'"></div>`:'';
 const ph=d.people&&d.people.length?`<div style="margin-top:9px"><div class="sl">Key personnel</div>${d.people.map(p=>`<span class="pt">${p.name} <span style="color:var(--color-text-secondary);font-size:10px">&middot; ${p.role}</span></span>`).join('')}</div>`:'';
 const ch=d.connected&&d.connected.length?`<div style="margin-top:9px"><div class="sl">Connected to</div>${d.connected.map(c=>`<span class="ct">${c}</span>`).join('')}</div>`:'';
 const fh=d.flows&&d.flows.length?`<div style="margin-top:9px"><div class="sl">Payment flows</div>${d.flows.map(f=>`<div style="font-size:11px;color:var(--color-text-secondary);padding:2.5px 0;border-bottom:.5px solid var(--color-border-tertiary)">${f}</div>`).join('')}</div>`:'';
 const hh=d.highlight?`<div style="margin-top:9px;padding:6px 10px;border-radius:7px;background:rgba(127,119,221,.1);border:.5px solid rgba(127,119,221,.3);font-size:11px;color:#3C3489">${d.highlight}</div>`:'';
-p.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px"><div><div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">${d.name}</div><div style="font-size:11px;color:var(--color-text-secondary);margin-top:1px">${d.role}</div></div><button onclick="cd()" style="background:none;border:none;cursor:pointer;color:var(--color-text-tertiary);padding:0 2px;font-size:17px;line-height:1">&times;</button></div><div style="font-size:12px;color:var(--color-text-secondary);line-height:1.65">${d.desc}</div>${ph}${ch}${fh}${hh}`;
+p.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px"><div style="display:flex;gap:8px;align-items:flex-start">${logo}<div><div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">${d.name}</div><div style="font-size:11px;color:var(--color-text-secondary);margin-top:1px">${d.role}</div></div></div><button onclick="cd()" style="background:none;border:none;cursor:pointer;color:var(--color-text-tertiary);padding:0 2px;font-size:17px;line-height:1">&times;</button></div><div style="font-size:12px;color:var(--color-text-secondary);line-height:1.65">${d.desc}</div>${ph}${ch}${fh}${hh}`;
 p.classList.add('sh');
 setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
 }
@@ -256,8 +260,8 @@ if(active){const el=document.getElementById('c-'+active);if(el)el.classList.remo
 fetch('/mnt/user-data/outputs/logos_payload.json').catch(()=>{}).then(()=>{});
 (function injectLogos(){
 try{
-const raw='{"animoca":"https://cdn.prod.website-files.com/694b47ff8f3088ab9288889c/694b47ff8f3088ab928888ff_logo.svg","hedera":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGaq2RjLO-OBduXvNnOGzDEA34VzM2OlgSUQ&s","sbv":"https://cdn.haitrieu.com/wp-content/uploads/2022/08/logo-ngan-hang-nha-nuoc-viet-nam-300x213.png","hashpack":"https://play-lh.googleusercontent.com/iFpAMOykLLlqE6yqZEG9mzhhmIVWIp5zTixNSneboNWn-uDqeEh8ZjUtc0wniLAPQ6I","vba":"https://cdn.prod.website-files.com/6399ae70ea78b063096903a1/65d6ce7c6073c98a3f7e671d_vba.svg","basalpay":"https://play-lh.googleusercontent.com/NpMa48iXaRLPZns-RxRLoAcDe_nS0BMhePNPatlCWTzI_LKDZBkh8DtbDugfrOY0xe2I","onematrix":"https://itviec.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NjQ0OTA0MSwicHVyIjoiYmxvYl9pZCJ9fQ==--f7c0d5a12dd12b0e04954091d83f58fd763c617d/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemVfdG9fbGltaXQiOlszMDAsMzAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa1464e8e6bcd982de6964c22807119ec733febd/B%E1%BA%A3n%20sao%20c%E1%BB%A7a%20b1.png","alphatrue":"https://alphatrue.com/favicon.ico","sev":"https://images.squarespace-cdn.com/content/v1/64a5313a22a3ea442ad91ae9/d161b9eb-5cb5-4484-a4f0-39a82e4c59c8/Logo+SEV.png","opencampus":"https://s3.coinmarketcap.com/static-gravity/image/60f1fc5d85f2463881db170b6d740876.png","newborns":"https://homepage.momocdn.net/img/momo-upload-api-231212135255-638379859759875678.jpg","varmeta":"https://images.glints.com/unsafe/glints-dashboard.oss-ap-southeast-1.aliyuncs.com/company-logo/d578de75703bb388790d2f66c5785c00.png"}';
-if(raw.length>10){const data=JSON.parse(raw);loadLogos(data);}
+const raw='{"animoca":"https://cdn.prod.website-files.com/694b47ff8f3088ab9288889c/694b47ff8f3088ab928888ff_logo.svg","hedera":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGaq2RjLO-OBduXvNnOGzDEA34VzM2OlgSUQ&s","sbv":"https://cdn.haitrieu.com/wp-content/uploads/2022/08/logo-ngan-hang-nha-nuoc-viet-nam-300x213.png","government":"https://upload.wikimedia.org/wikipedia/commons/a/a3/Emblem_of_Vietnam.svg","hashpack":"https://play-lh.googleusercontent.com/iFpAMOykLLlqE6yqZEG9mzhhmIVWIp5zTixNSneboNWn-uDqeEh8ZjUtc0wniLAPQ6I","vba":"https://cdn.prod.website-files.com/6399ae70ea78b063096903a1/65d6ce7c6073c98a3f7e671d_vba.svg","basalpay":"https://play-lh.googleusercontent.com/NpMa48iXaRLPZns-RxRLoAcDe_nS0BMhePNPatlCWTzI_LKDZBkh8DtbDugfrOY0xe2I","onematrix":"https://itviec.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NjQ0OTA0MSwicHVyIjoiYmxvYl9pZCJ9fQ==--f7c0d5a12dd12b0e04954091d83f58fd763c617d/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemVfdG9fbGltaXQiOlszMDAsMzAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa1464e8e6bcd982de6964c22807119ec733febd/B%E1%BA%A3n%20sao%20c%E1%BB%A7a%20b1.png","alphatrue":"https://alphatrue.com/favicon.ico","sev":"https://images.squarespace-cdn.com/content/v1/64a5313a22a3ea442ad91ae9/d161b9eb-5cb5-4484-a4f0-39a82e4c59c8/Logo+SEV.png","opencampus":"https://s3.coinmarketcap.com/static-gravity/image/60f1fc5d85f2463881db170b6d740876.png","newborns":"https://homepage.momocdn.net/img/momo-upload-api-231212135255-638379859759875678.jpg","varmeta":"https://images.glints.com/unsafe/glints-dashboard.oss-ap-southeast-1.aliyuncs.com/company-logo/d578de75703bb388790d2f66c5785c00.png"}';
+if(raw.length>10){const data=JSON.parse(raw);window.LOGO_DATA=data;loadLogos(data);}
 }catch(e){}
 })();
 </script>
